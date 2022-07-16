@@ -13,6 +13,7 @@ import os
 from pathlib import Path
 from os import environ
 from dotenv import load_dotenv
+import django_heroku
 
 load_dotenv()
 
@@ -24,12 +25,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-&m)h3y72+n0hmz2#z_0un*qp92*a3s#+u=d)71c9jw9(pl9(2d'
+SECRET_KEY = environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = environ.get("DEBUG")
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["ckbanzapi.herokuapp.com"]
 
 
 # Application definition
@@ -155,3 +156,5 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
+
+django_heroku.settings(locals())
