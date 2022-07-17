@@ -3,7 +3,17 @@
 <h1> Register </h1>
     <form method="POST">
         {% csrf_token %}
-        {{ form.username | crispy }}
-        <button type="submit">Submit</button>
+        <fieldset class="form-group">
+        {{ form.as_p}}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-primary" type="submit">Submit</button>
+        </div>
+
     </form>
+
+
+    <div>
+        <a href="{%  url 'login' %}"><small>Already have an account?</small></a>
+    </div>
 {% endblock content %}

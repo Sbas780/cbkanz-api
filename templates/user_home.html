@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 
 {% block content %}
-     <div class="d-flex flex-wrap justify-content-around border align-items-start" style="height: 90%;">
-        <div class="p-4 h-100" style="width: 58%">
+     <div class="d-flex flex-wrap justify-content-around align-items-start" style="height: 90%;">
+        <div class="p-4 h-100 border mt-4 rounded" style="width: 58%">
             <h1 class="py-4">Endpoints</h1>
 
             <div class="accordion" id="accordionExample">
@@ -22,7 +22,7 @@
                               var obj = {
                                   "id": "int",
                                   "vendor_name": "string",
-                                  "vendor_url": "strign"
+                                  "vendor_url": "string"
                               }
 
                               var str = JSON.stringify(obj, null, 2);
