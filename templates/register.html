@@ -1,19 +1,22 @@
 {% extends "base.html" %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
 {% block content %}
-<h1> Register </h1>
-    <form method="POST">
-        {% csrf_token %}
-        <fieldset class="form-group">
-        {{ form.as_p}}
-        </fieldset>
-        <div class="form-group">
-            <button class="btn btn-outline-primary" type="submit">Submit</button>
+    <div class="content-section border rounded w-50 container align-items-center justify-content-center mt-5 mb-5 p-5">
+        <form method="POST">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Join Today</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group pb-3">
+                <button class="btn btn-outline-info" type="submit">Sign Up</button>
+            </div>
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                Already Have An Account? <a class="ml-2" href="/login">Sign In</a>
+            </small>
         </div>
-
-    </form>
-
-
-    <div>
-        <a href="{%  url 'login' %}"><small>Already have an account?</small></a>
     </div>
-{% endblock content %}
+{% endblock content %}ent %}
